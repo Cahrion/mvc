@@ -12,7 +12,7 @@ class  Controller {
 		$this->form = new Form();
 		$this->bilgi = new Bilgi();
 		
-	}
+	} 
 	
 	// ihtyiacımız olan model'i dahil ediyoruz
 	public function modelUpdate($name) {
@@ -29,14 +29,6 @@ class  Controller {
 		
 		endif;
 	}
-	
-	
-	
-
-	
 }
-
-
-
 
 ?>

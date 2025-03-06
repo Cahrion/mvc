@@ -35,7 +35,10 @@ class Login extends Controller
 			$result = $this->model->accountCheck("panel", "ad='$ad' and sifre='$sifre'");
 
 			if ($result == 1){
-				header("Location:" . URL . "panel");
+				Session::set("kulad", "true");
+				
+				header("Location:" . URL . "/panel");
+				exit();
 			}else{
 				$this->view->show(
 					"panel/sonuc",

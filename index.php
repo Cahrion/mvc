@@ -9,6 +9,6 @@ spl_autoload_register(function ($className)
 require 'config/genel.php';
 require 'config/database.php';
 
-$boots = new boots;
+$Routers = new Routers;
 
 ?>

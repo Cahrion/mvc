@@ -1,6 +1,6 @@
 <?php
 
-class kayit extends Controller
+class Kayit extends Controller
 {
 
 
@@ -15,7 +15,6 @@ class kayit extends Controller
 	{
 		$this->view->show("form/index");
 	}
-
 	function addData()
 	{
 		$ad = $this->form->get("ad")->isEmpty();
@@ -49,9 +48,12 @@ class kayit extends Controller
 		$this->view->show("form/sonuc", $sonuc);
 	}
 
-	function kayitguncelle($id)
+	function kayitguncelle($id = "0")
 	{
-
+		if($id == "0"){
+			header("Location: " . URL);
+			exit();
+		}
 		$sonuc = $this->model->getData("ogrenci", "where id=" . $id);
 		$this->view->show("form/guncelle", $sonuc);
 	}
