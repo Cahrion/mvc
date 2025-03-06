@@ -35,7 +35,7 @@
             </form>
         </div>
 
-        <div class="col-lg-4 d-flex justify-content-end">
+        <div class="col-lg-4 d-flex justify-content-end mb-3">
             <?php
             if (Session::get("kulad") == true) {
             ?>
