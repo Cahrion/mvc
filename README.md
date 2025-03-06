@@ -1,4 +1,4 @@
-* Ek bilgiler
+** Ek bilgiler **
 - Proje frontend tarafı geliştirilmemiştir.
 - Proje çalışması için oluşturulmuş olup gerekli kısımlar düzeltilmiş ve teslim edilmiştir.
 
