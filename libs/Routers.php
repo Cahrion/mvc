@@ -65,14 +65,14 @@ class Routers
 
 
         // Kayıt
-        $this->router->addRoute('kayit', 'Kayit', 'listele');
-        $this->router->addRoute('kayit/kayitekle', 'Kayit', 'kayitekle');
-        $this->router->addRoute('kayit/listele', 'Kayit', 'listele');
-        $this->router->addRoute('kayit/arama', 'Kayit', 'arama');
-        $this->router->addRoute('kayit/guncelleson', 'Kayit', 'guncelleson');
-        $this->router->addRoute('kayit/addData', 'Kayit', 'addData');
-        $this->router->addRoute('kayit/kayitguncelle/{id?}', 'Kayit', 'kayitguncelle'); // Optional
-        $this->router->addRoute('kayit/kayitsil/{\d+}', 'Kayit', 'kayitsil'); // REGEX
+        $this->router->addRoute('kayit', 'Data', 'get');
+        $this->router->addRoute('data/data', 'Data', 'data');
+        $this->router->addRoute('data/getData', 'Data', 'getData');
+        $this->router->addRoute('data/searchData', 'Data', 'searchData');
+        $this->router->addRoute('data/updDataResult', 'Data', 'updDataResult');
+        $this->router->addRoute('data/addDataResult', 'Data', 'addDataResult');
+        $this->router->addRoute('data/updData/{id?}', 'Data', 'updData'); // Optional
+        $this->router->addRoute('data/delData/{\d+}', 'Data', 'delData'); // REGEX
 
         // Return Test Area
         $this->router->addRoute('returnTest', 'Main', 'returnTest');
@@ -81,7 +81,7 @@ class Routers
         $this->router->addRoute('login/Form', 'Login', 'Form');
         $this->router->addRoute('Login/accountCheck', 'Login', 'accountCheck');
         $this->router->addRoute('panel', 'Panel', 'index', ["authCheck"]); // MiddleWare
-        $this->router->addRoute('panel/cikis', 'Panel', 'cikis'); //
+        $this->router->addRoute('panel/leave', 'Panel', 'leave'); //
     }
 
     private function handleRequest()

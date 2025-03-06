@@ -21,7 +21,7 @@
                                 <td>' . $value["ad"] . '</td>
                                 <td>' . $value["soyad"] . '</td>
                                 <td>' . $value["yas"] . '</td>
-                                <td><a href="' . URL . '/kayit/kayitguncelle/' . $value["id"] . '" class="btn  btn-success">Güncelle</a>   <a href="' . URL . '/kayit/kayitsil/' . $value["id"] . '" class="btn  btn-danger">Sil</a></td>
+                                <td><a href="' . URL . '/data/updData/' . $value["id"] . '" class="btn  btn-success">Güncelle</a>   <a href="' . URL . '/data/delData/' . $value["id"] . '" class="btn  btn-danger">Sil</a></td>
                             </tr>  
                         ';
                     }

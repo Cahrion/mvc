@@ -18,8 +18,9 @@ class Panel extends Controller
 		}
 	}
 
-	function cikis()
+	function leave()
 	{
+        session_start();
 		Session::destroy();
 		header("Location:" . URL . "/login/Form");
 	}

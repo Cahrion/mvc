@@ -1,6 +1,6 @@
 <?php
 
-class kayit_model extends Model
+class data_model extends Model
 {
 	public $db;
 
@@ -11,9 +11,9 @@ class kayit_model extends Model
 
 
 
-	function addData($tabload, $sutunlarim, $veri)
+	function addDataResult($tabload, $sutunlarim, $veri)
 	{
-		return $this->db->addData($tabload, $sutunlarim, $veri);
+		return $this->db->addDataResult($tabload, $sutunlarim, $veri);
 	}
 
 	function getData($tabload, $kosul)

@@ -1,6 +1,6 @@
 <?php
 
-class Form extends Bilgi
+class Form extends Information
 {
 
 	public $deger, $veri;

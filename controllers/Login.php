@@ -13,7 +13,7 @@ class Login extends Controller
 
 	function Form()
 	{
-		$this->view->show("form/giris");
+		$this->view->show("form/login");
 	}
 
 
@@ -29,21 +29,21 @@ class Login extends Controller
 			$this->view->show(
 				"form/sonuc",
 				$this->form->error,
-				$this->bilgi->hata(false, "/login/Form")
+				$this->Information->error(false, "/login/Form")
 			);
 		}else{
 			$result = $this->model->accountCheck("panel", "ad='$ad' and sifre='$sifre'");
 
 			if ($result == 1){
 				Session::set("kulad", "true");
-				
+
 				header("Location:" . URL . "/panel");
 				exit();
 			}else{
 				$this->view->show(
 					"panel/sonuc",
 					$this->form->error,
-					$this->bilgi->hata("Eşleşme yok", "/login/Form")
+					$this->Information->error("Eşleşme yok", "/login/Form")
 				);
 			}
 

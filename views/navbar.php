@@ -14,7 +14,7 @@
                name=""
                id=""
                class="btn btn-secondary"
-               href="<?= URL; ?>/kayit/kayitekle"
+               href="<?= URL; ?>/data/data"
                role="button"
                >KAYIT EKLE</a
             >
@@ -22,20 +22,52 @@
                name=""
                id=""
                class="btn btn-secondary"
-               href="<?= URL; ?>/kayit/listele"
+               href="<?= URL; ?>/data/getData"
                role="button"
-               >KAYITLARI EKLE</a
+               >KAYITLAR</a
             >
         </div>
 
         <div class="col-lg-4 d-flex justify-content-center mb-3">
-            <form action="<?php echo URL; ?>/kayit/arama" method="post" class="d-flex">
+            <form action="<?php echo URL; ?>/data/searchData" method="post" class="d-flex">
                 <input type="text" name="kelime" placeholder="Kelime" style="margin-right:10px"/>
                 <input type="submit" name="btn" value="ARA" class="btn btn-danger" />
             </form>
         </div>
 
         <div class="col-lg-4 d-flex justify-content-end mb-3">
+             <a
+                name=""
+                id=""
+                class="btn btn-secondary" style="margin-right:10px;"
+                href="<?= URL; ?>/returnTest"
+                role="button"
+                >Return TEST</a
+             >
+             <a
+                name=""
+                id=""
+                class="btn btn-secondary" style="margin-right:10px;"
+                href="<?= URL; ?>/data/updData"
+                role="button"
+                >{id?} TEST</a
+             >
+             <a
+                name=""
+                id=""
+                class="btn btn-secondary" style="margin-right:10px;"
+                href="<?= URL; ?>/data/delData/Asd"
+                role="button"
+                >{\d+} TEST</a
+             >
+             <a
+                name=""
+                id=""
+                class="btn btn-secondary" style="margin-right:10px;font-size:14px"
+                href="<?= URL; ?>/panel"
+                role="button"
+                >MiddleWare TEST</a
+             >
             <?php
             if (Session::get("kulad") == true) {
             ?>
@@ -43,7 +75,7 @@
                 name=""
                 id=""
                 class="btn btn-danger"
-                href="<?= URL; ?>/panel/cikis"
+                href="<?= URL; ?>/panel/leave"
                 role="button"
                 >ÇIKIŞ YAP</a
              >

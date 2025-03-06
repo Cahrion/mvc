@@ -2,7 +2,7 @@
 
 <body style="overflow-x: hidden;">
 	<?php require 'views/navbar.php'; ?>
-	<form action="<?php echo URL; ?>/kayit/guncelleson" method="post">
+	<form action="<?php echo URL; ?>/data/updDataResult" method="post">
 		<?php
 		foreach ($data as $value) {
 			$id = $value["id"];

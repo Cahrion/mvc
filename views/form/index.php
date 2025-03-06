@@ -2,7 +2,7 @@
 
 <body style="overflow-x: hidden;">
   <?php require 'views/navbar.php'; ?>
-  <form action="<?php echo URL; ?>/kayit/addData" method="post">
+  <form action="<?php echo URL; ?>/data/addDataResult" method="post">
     <div class="text-center mt-5" style="min-height:100vh">
 
 

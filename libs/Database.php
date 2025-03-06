@@ -6,17 +6,17 @@ class Database extends PDO
 
 	protected $array = array();
 	protected $arrayTwo = array();
-	protected $bilgi;
+	protected $Information;
 
 
 	function __construct()
 	{
 		parent::__construct('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';port=' . DB_PORT . ';charset=utf8', DB_USER, DB_PASS);
-		$this->bilgi = new Bilgi();
+		$this->Information = new Information();
 	}
 
 
-	function addData($tableName, $columnName, $datas)
+	function addDataResult($tableName, $columnName, $datas)
 	{
 
 		$sutunsayi = count($columnName);
@@ -31,9 +31,9 @@ class Database extends PDO
 
 
 		if ($sorgu->execute($datas)) {
-			return $this->bilgi->basarili("EKLEME BAŞARILI", "/kayit/kayitekle");
+			return $this->Information->success("EKLEME BAŞARILI", "/data/data");
 		} else {
-			return $this->bilgi->hata("VERİ TABANI HATASI", "/kayit/kayitekle");
+			return $this->Information->error("VERİ TABANI HATASI", "/data/data");
 		}
 	} // Added Data
 
@@ -57,9 +57,9 @@ class Database extends PDO
 		$myQuery = $this->prepare("delete from " . $tableName . ' where ' . $arg);
 
 		if ($myQuery->execute()) {
-			return $this->bilgi->basarili("SİLME BAŞARILI", "/kayit/listele");
+			return $this->Information->success("SİLME BAŞARILI", "/data/getData");
 		} else {
-			return $this->bilgi->hata("VERİ TABANI HATASI", "/kayit/listele");
+			return $this->Information->error("VERİ TABANI HATASI", "/data/getData");
 		}
 	}
 
@@ -76,9 +76,9 @@ class Database extends PDO
 
 
 		if ($sorgum->execute($datas)){
-			return $this->bilgi->basarili("GÜNCELLEME BAŞARILI", "/kayit/listele");
+			return $this->Information->success("GÜNCELLEME BAŞARILI", "/data/getData");
 		}else{
-			return $this->bilgi->hata("VERİ TABANI HATASI", "/kayit/listele");
+			return $this->Information->error("VERİ TABANI HATASI", "/data/getData");
 
 		}
 	}

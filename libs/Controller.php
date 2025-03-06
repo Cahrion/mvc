@@ -3,14 +3,14 @@
 class  Controller {
 	public $view;
 	public $form;
-	public $bilgi;
+	public $Information;
 	public $model;
 	
 	function __construct() {
 			
 		$this->view = new View();
 		$this->form = new Form();
-		$this->bilgi = new Bilgi();
+		$this->Information = new Information();
 		
 	} 
 	

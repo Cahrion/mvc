@@ -1,6 +1,6 @@
 <?php
 
-class Kayit extends Controller
+class Data extends Controller
 {
 
 
@@ -8,14 +8,14 @@ class Kayit extends Controller
 	{
 		parent::__construct();
 
-		$this->modelUpdate('kayit');
+		$this->modelUpdate('data');
 	}
 
-	function kayitekle()
+	function data()
 	{
 		$this->view->show("form/index");
 	}
-	function addData()
+	function addDataResult()
 	{
 		$ad = $this->form->get("ad")->isEmpty();
 		$soyad = $this->form->get("soyad")->isEmpty();
@@ -25,40 +25,40 @@ class Kayit extends Controller
 			$this->view->show(
 				"form/sonuc",
 				$this->form->error,
-				$this->bilgi->hata(false, "/kayit/kayitekle")
+				$this->Information->error(false, "/data/data")
 			);
 		} else {
-			$sonuc = $this->model->addData("ogrenci", array("ad", "soyad", "yas"), array($ad, $soyad, $yas));
+			$sonuc = $this->model->addDataResult("ogrenci", array("ad", "soyad", "yas"), array($ad, $soyad, $yas));
 
-			$this->view->show("form/sonuc", $sonuc);
+			$this->view->show("form/result", $sonuc);
 		}
 	}
 
-	function listele()
+	function getData()
 	{
 
 		$sonuc = $this->model->getData("ogrenci", "order by id desc");
-		$this->view->show("form/listele", $sonuc);
+		$this->view->show("form/get", $sonuc);
 	}
 
-	function kayitsil($id)
+	function delData($id)
 	{
 
 		$sonuc = $this->model->delData("ogrenci", "id=" . $id);
-		$this->view->show("form/sonuc", $sonuc);
+		$this->view->show("form/result", $sonuc);
 	}
 
-	function kayitguncelle($id = "0")
+	function updData($id = "0")
 	{
 		if($id == "0"){
 			header("Location: " . URL);
 			exit();
 		}
 		$sonuc = $this->model->getData("ogrenci", "where id=" . $id);
-		$this->view->show("form/guncelle", $sonuc);
+		$this->view->show("form/update", $sonuc);
 	}
 
-	function guncelleson()
+	function updDataResult()
 	{
 		$ad = $this->form->get("ad")->isEmpty();
 		$soyad = $this->form->get("soyad")->isEmpty();
@@ -66,15 +66,15 @@ class Kayit extends Controller
 		$id = $this->form->get("kayitid")->isEmpty();
 
 		if (!empty($this->form->error)) {
-			$this->view->show("form/sonuc", $this->form->error);
+			$this->view->show("form/result", $this->form->error);
 		} else {
 			$result = $this->model->updData("ogrenci", array("ad", "soyad", "yas"), array($ad, $soyad, $yas), "id=" . $id);
 
-			$this->view->show("form/sonuc", $result);
+			$this->view->show("form/result", $result);
 		}
 	}
 
-	function arama()
+	function searchData()
 	{
 		$kelime = $this->form->get("kelime")->isEmpty();
 
@@ -83,7 +83,7 @@ class Kayit extends Controller
 		} else {
 			$sonuc = $this->model->searchData("ogrenci", "ad LIKE '%" . $kelime . "%' or soyad LIKE '%" . $kelime . "%'");
 
-			$this->view->show("form/listele", $sonuc);
+			$this->view->show("form/get", $sonuc);
 		}
 	}
 }
